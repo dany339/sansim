@@ -1,19 +1,22 @@
 @charset 'utf-8';
 
 .sns .sec-title {
-  margin-top: 18rem;
+  margin-top: 9.375vw;
 }
 
 .sns-tab {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.8939%;
   justify-content: center;
-  margin-top: 11rem;
+  margin-top: 5.7292vw;
+  flex-shrink: 0;
+  overflow: auto;
 }
 
 .sns-tab li {
   display: block;
   width: 12rem;
+  min-width: 9.6rem;
   aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
@@ -86,9 +89,8 @@
 }
 
 .sns-item {
-  /* border: 1px solid #000; */
   width: 42rem;
-  margin-top: 6rem;
+  margin-top: 3.125vw;
 }
 
 .sns-item figure {
@@ -102,10 +104,9 @@
 }
 
 .sns-txt p {
-  margin-top: 2.1rem;
+  margin-top: 1.0417vw;
   font-weight: 700;
   color: var(--title-color);
-  word-break: keep-all;
 }
 
 .sns-txt p + p {
@@ -116,7 +117,7 @@
 }
 
 .pagination {
-  margin-top: 11rem;
+  margin-top: 5.7292vw;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -154,16 +155,19 @@
 }
 
 .app .sec-title {
-  margin-top: 20rem;
+  margin-top: 10.4167vw;
 }
 
 .app-tab {
-  margin-top: 9rem;
+  margin-top: 4.6875vw;
   display: flex;
   gap: 4rem;
-  font-size: 2.8rem;
+  font-size: clamp(2.4rem, 8.8888%, 2.8rem);
   font-weight: 700;
   color: var(--main-color40);
+  word-break: keep-all;
+  flex-shrink: 0;
+  overflow-x: auto;
 }
 
 .app-tab li {
@@ -181,7 +185,7 @@
 
 .app-con {
   position: relative;
-  margin-top: 2rem;
+  margin-top: 1.0417vw;
 }
 
 .app-con figure {
@@ -211,7 +215,7 @@
   left: 0;
   width: 40vw;
   transform: translateY(-50%);
-  margin-left: 30.9rem;
+  margin-left: 16.0938vw;
   word-break: keep-all;
 }
 
@@ -230,6 +234,7 @@
 
 .app-txt dd {
   font-size: 2.2rem;
+  font-size: clamp(1.8rem, 1.1458vw, 2.2rem);
   color: var(--white100);
   margin-top: 1rem;
 }
@@ -264,77 +269,30 @@
   background: var(--white100);
 }
 
-.reward .sec-title {
-  margin-top: 20rem;
+@media (max-width: 1200px) {
+  .sns-tab li {
+    width: 10rem;
+  }
+
+  .app-txt {
+    width: 50vw;
+  }
 }
 
-.condition {
-  font-size: 1.8rem;
-  margin-top: 5rem;
+@media (max-width: 1000px) {
+  .app-txt {
+    width: 68vw;
+  }
 }
 
-.condition b {
-  color: var(--main-color);
-  font-weight: 500;
-}
+@media (max-width: 710px) {
+  .app .sec-title {
+    margin-top: 20.4167vw;
+  }
 
-.reward-item {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.reward-item li {
-  width: 32%;
-  height: 17.8rem;
-  gap: 1.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--main-color10);
-  border-radius: 10px;
-  padding: 0 3rem;
-}
-
-.reward-item figure {
-  width: 10rem;
-  aspect-ratio: 1/1;
-}
-
-.reward-item li p {
-  font: 2.2rem/1.3 "Pretendard", sans-serif;
-  font-weight: 600;
-  color: var(--title-color);
-}
-
-.reward-list:nth-child(1) .reward-item li b {
-  color: #eda09f;
-}
-.reward-list:nth-child(2) .reward-item li b {
-  color: #eab42d;
-}
-.reward-list:nth-child(3) .reward-item li b {
-  color: #a98ddc;
-}
-
-.reward-item li i {
-  margin-top: 1rem;
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--text-color);
-}
-
-.details {
-  margin-top: 8rem;
-  font-size: 1.4rem;
-  color: var(--black40);
-}
-
-.details b {
-  font-weight: 700;
-  color: var(--black50);
-}
-
-.details li:last-child {
-  margin-top: 1.5rem;
+  .app-txt {
+    width: 100%;
+    margin-left: 0;
+    padding: 0 1rem;
+  }
 }

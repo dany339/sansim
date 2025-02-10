@@ -36,9 +36,11 @@
 }
 
 .vison-title h4 {
-  font-size: 8.2rem;
+  font: 8.2rem/1.1 "Poppins", sans-serif;
+  font-size: clamp(6.5rem, 9.1146vw, 8.2rem);
   font-weight: 600;
   color: var(--main-color);
+  word-break: keep-all;
 }
 
 .vison-title p {
@@ -47,12 +49,15 @@
   word-break: keep-all;
 }
 
+.story .inner {
+  overflow: hidden;
+}
+
 .story {
   background: url(https://www.laneige.com/kr/ko/assets/image/brand/brand-story/story-2024_img_0001_pc_kr_241210.jpg)
     no-repeat 50% / cover;
   padding: 21.2rem 0 20rem 0;
   position: relative;
-  /* transform: translateY(-50%); */
   z-index: 1;
 }
 
@@ -86,7 +91,7 @@
 
 .story p {
   width: 50%;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2.2vw, 2.2rem);
   color: var(--white70);
   word-break: keep-all;
   margin-top: 2.8rem;
@@ -95,13 +100,13 @@
 }
 
 .story b {
-  font-size: 2.2rem;
+  font-size: clamp(2rem, 2.2vw, 2.2rem);
   font-weight: 600;
   color: var(--white100);
 }
 
 .store {
-  margin-top: 9rem;
+  margin-top: 4.6875vw;
   background: linear-gradient(
     to right,
     rgba(64, 118, 255, 1),
@@ -144,8 +149,10 @@
   position: absolute;
   top: 3rem;
   right: 0;
-  width: 74.2rem;
-  height: 31.5rem;
+  /* width: 74.2rem; */
+  width: 38.6458vw;
+  /* height: 31.5rem; */
+  aspect-ratio: 1/0.4245;
   transform: translateY(13rem);
   transition: 0.4s;
   opacity: 0;
@@ -155,22 +162,23 @@
 .walter-friends figure.on {
   transform: translateY(0);
   opacity: 1;
-  height: 31.5rem;
 }
 
 .vip .sec-title {
-  margin-top: 25.8rem;
+  margin-top: 13.4375vw;
 }
 
 .vip-service {
-  margin-top: 12rem;
+  margin-top: 7.8125vw;
   display: flex;
   justify-content: center;
   gap: 4.5rem;
+  flex-wrap: wrap;
 }
 
 .vip-service li {
-  width: 41rem;
+  width: 21.3542vw;
+  min-width: 20rem;
   aspect-ratio: 1/1;
   border-radius: 50%;
   padding: 0 5.4rem;
@@ -183,7 +191,7 @@
   position: relative;
   cursor: pointer;
   word-break: keep-all;
-  box-shadow: 0px 0px 30px rgba(14, 33, 47, 0.55);
+  box-shadow: 0px 0px 30px rgba(64, 118, 255, 0.55);
 }
 
 .vip-service li:nth-child(1) {
@@ -345,7 +353,31 @@
   font-size: 1.8rem;
 }
 
+@media (max-width: 1800px) {
+  .vison-title::before,
+  .vison-title::after {
+    width: 18rem;
+    height: 13rem;
+    background-size: contain;
+  }
+
+  .walter-friends {
+    transform: translateX(0rem);
+  }
+}
+
+@media (max-width: 1400px) {
+  .vison-title::before,
+  .vison-title::after {
+    display: none;
+  }
+}
+
 @media (max-width: 1200px) {
+  .app-txt {
+    width: 68vw;
+  }
+
   .allergie-txt {
     margin-top: 10rem;
   }
@@ -357,10 +389,46 @@
   .allergie .view-more {
     margin-top: 2rem;
   }
+
+  .walter-friends figure {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  .store-txt {
+    width: 80%;
+  }
 }
 
 @media (max-width: 600px) {
+  .store {
+    height: 40rem;
+  }
+
   .allergie-txt p {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .vison-title p {
+    width: 80%;
+  }
+
+  .slider {
+    height: 55vh;
+  }
+
+  .story .sec-title h3 {
+    width: 100%;
+  }
+
+  .store-txt {
+    width: 100%;
+  }
+
+  .story p {
+    width: 90%;
   }
 }

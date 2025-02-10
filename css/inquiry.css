@@ -1,11 +1,12 @@
 @charset 'utf-8';
 
 .faq {
-  margin-bottom: 13rem;
+  /* margin-bottom: 13rem; */
+  margin-bottom: 6.7708vw;
 }
 
 .faq .sec-title {
-  margin-top: 18rem;
+  margin-top: 9.375vw;
 }
 
 .faq-wrap {
@@ -18,13 +19,16 @@
 .faq-tab {
   display: flex;
   flex-direction: column;
-  font-size: 3rem;
+  font-size: clamp(2.4rem, 3vw, 3rem);
   font-weight: 700;
   gap: 2rem;
+  flex-shrink: 0;
+  overflow-x: auto;
 }
 
 .faq-tab li {
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .faq-tab li:hover {
@@ -93,7 +97,7 @@
   font-size: 2.6rem;
   font-weight: 700;
   color: var(--white100);
-  background: var(--title-color);
+  background: var(--main-color);
 }
 
 .answer-wrap i {
@@ -110,7 +114,7 @@
 }
 
 .faq-txt h4 {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 2vw, 3rem);
   font-weight: 700;
   color: var(--title-color);
   word-break: keep-all;
@@ -126,4 +130,21 @@
 .answer-con {
   display: flex;
   gap: 3rem;
+}
+
+@media (max-width: 1360px) {
+  .faq-wrap {
+    flex-direction: column;
+    /* gap: 4.5rem; */
+    gap: 2.3438vw;
+  }
+
+  .faq-tab {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-wrap li {
+    width: 100%;
+  }
 }
