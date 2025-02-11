@@ -145,10 +145,6 @@
 }
 
 @media (max-width: 1800px) {
-  .menu-text-card h3 {
-    font-size: 8rem;
-  }
-
   .menu-text-card p {
     width: 100%;
   }

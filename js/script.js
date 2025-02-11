@@ -18,6 +18,38 @@ $menu.on("mouseleave", function () {
   $submenu.stop().slideUp(duration);
 });
 
+//모바일 버전의 GNB!!
+// 모바일 메뉴 기능
+const $btnMenu = $(".btn-menu");
+const $btnClose = $(".btn-close");
+const $mobileMenu = $(".mobile-menu");
+const $mobileGnb = $(".mobile-gnb > li > a");
+
+$btnMenu.on("click", function () {
+  $mobileMenu.addClass("on");
+  $("body").css("overflow", "hidden"); // 스크롤 방지
+});
+
+$btnClose.on("click", function () {
+  $mobileMenu.removeClass("on");
+  $("body").css("overflow", "auto"); // 스크롤 복구
+});
+
+// 모바일 서브메뉴 토글
+$mobileGnb.on("click", function (e) {
+  e.preventDefault();
+  $(this).next(".mobile-submenu").slideToggle(300);
+  $(this).parent().siblings().find(".mobile-submenu").slideUp(300);
+});
+
+// 모바일 메뉴 외부 영역 클릭시 닫기
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".mobile-menu, .btn-menu").length) {
+    $mobileMenu.removeClass("on");
+    $("body").css("overflow", "auto");
+  }
+});
+
 // foot family 기능
 if ($(".btn-family").length && $(".family-list").length) {
   const family = $(".btn-family");

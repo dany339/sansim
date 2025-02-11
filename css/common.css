@@ -332,7 +332,21 @@ nav {
 }
 
 .btn-language {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   background: var(--white100);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.btn-language::after {
+  content: "";
+  display: block;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  background: red;
+  background: url(../img/arrow-m-bottom.png) no-repeat 50% / contain;
 }
 
 .btn-menu {
@@ -344,7 +358,7 @@ nav {
 
 .menu-bar span {
   display: block;
-  background: var(--main-color);
+  background: var(--title-color);
   margin: auto;
   width: 3rem;
   height: 0.3rem;
@@ -367,6 +381,81 @@ nav {
 }
 .btn-menu:hover .bar3 {
   transform: translateY(-1.3rem);
+}
+
+.close-bar span {
+  display: block;
+  background: var(--title-color);
+  margin: auto;
+  width: 3rem;
+  height: 0.3rem;
+  transition: 0.25s;
+}
+
+.close-bar .bar1 {
+  transform: rotate(45deg) translate(0.5rem, 0.4rem);
+}
+.close-bar .bar2 {
+  margin-top: 1rem;
+  transform: rotate(-45deg) translate(0.5rem, -0.3rem);
+}
+
+.btn-close:hover .bar1 {
+  transform: rotate(0);
+}
+.btn-close:hover .bar2 {
+  transform: rotate(0);
+}
+
+/* 모바일 메뉴~!!!! */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100vh;
+  background: var(--white100);
+  padding: 6rem 3rem;
+  transition: 0.4s ease;
+  z-index: 100;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.on {
+  right: 0;
+}
+
+.btn-close {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  width: 3rem;
+  height: 3rem;
+  background: url(../img/ico-close.svg) no-repeat center / 100%;
+}
+
+.mobile-gnb {
+  margin-top: 3rem;
+}
+
+.mobile-gnb > li > a {
+  display: block;
+  padding: 1.5rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--title-color);
+}
+
+.mobile-submenu {
+  display: none;
+  padding: 1rem 0 1rem 2rem;
+}
+
+.mobile-submenu a {
+  display: block;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  color: var(--text-color);
 }
 
 /* footer */
@@ -628,10 +717,6 @@ nav {
     flex-direction: column;
   }
 
-  .btn-close {
-    margin: 2rem 48vw 0 0;
-  }
-
   .sub-menu {
     display: none;
   }
@@ -661,12 +746,6 @@ nav {
 
   .foot-list::after {
     display: none;
-  }
-
-  .foot-con {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 5rem 3rem 7rem 3rem;
   }
 
   .accredit {
@@ -769,8 +848,8 @@ nav {
     justify-content: flex-end;
   }
 
-  .btn-close {
-    margin: 2rem 2rem 0 0;
+  .mobile-menu {
+    width: 100%;
   }
 
   .btn-main {
