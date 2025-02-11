@@ -6,6 +6,7 @@
 }
 
 .faq .sec-title {
+  /* margin-top: 18rem; */
   margin-top: 9.375vw;
 }
 
@@ -14,35 +15,6 @@
   justify-content: flex-end;
   gap: 16.5rem;
   margin-top: 4rem;
-}
-
-.faq-tab {
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(2.4rem, 3vw, 3rem);
-  font-weight: 700;
-  gap: 2rem;
-  flex-shrink: 0;
-  overflow-x: auto;
-}
-
-.faq-tab li {
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.faq-tab li:hover {
-  color: var(--main-color);
-  transition: 0.3s;
-}
-
-.faq-tab li.on {
-  color: var(--main-color);
-  transition: 0.3s;
-}
-
-.faq-tab.on {
-  color: var(--main-color);
 }
 
 .info-wrap li {
@@ -109,14 +81,10 @@
   width: 80%;
 }
 
-.faq-txt strong {
-  font-size: 1.6rem;
-}
-
 .faq-txt h4 {
   font-size: clamp(2.2rem, 2vw, 3rem);
   font-weight: 700;
-  color: var(--title-color);
+  color: var(--main-color);
   word-break: keep-all;
 }
 

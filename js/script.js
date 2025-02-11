@@ -1,15 +1,21 @@
 /* 공통!!!---------------------------------------------- */
 
-const btnMenu = $(".btn-menu");
-const btnClose = $(".btn-close");
-const gnb = $(".gnb");
+// GNB
+const $header = $("header");
+const $menu = $(".gnb > li");
+const $submenu = $(".submenu");
+const duration = 300;
 
-btnMenu.on("click", function () {
-  gnb.addClass("on");
+$menu.on("mouseenter", function () {
+  $(this).addClass("on");
+  $header.addClass("active");
+  $submenu.stop().slideDown(duration);
 });
 
-btnClose.on("click", function () {
-  gnb.removeClass("on");
+$menu.on("mouseleave", function () {
+  $(this).removeClass("on");
+  $header.removeClass("active");
+  $submenu.stop().slideUp(duration);
 });
 
 // foot family 기능
@@ -18,20 +24,9 @@ if ($(".btn-family").length && $(".family-list").length) {
   const familyList = $(".family-list");
   const duration = 300;
 
-  // 초기 위치 설정 - family-list를 버튼 위로 위치시킴
-  familyList.css({
-    bottom: "100%",
-    position: "absolute",
-    display: "none",
-  });
-
   family.on("click", function () {
     familyList.toggleClass("on");
-    if (familyList.hasClass("on")) {
-      familyList.slideDown(duration);
-    } else {
-      familyList.slideUp(duration);
-    }
+    familyList.slideToggle(duration);
   });
 }
 
@@ -130,7 +125,7 @@ if ($(".menu-con-slider").length) {
 if ($(".event-swiper").length) {
   const $eventSwiper = new Swiper(".event-swiper", {
     loop: true,
-    slidesPerView: "1",
+    slidesPerView: "2",
     spaceBetween: 20,
     autoplay: {
       delay: 1000,
@@ -138,45 +133,20 @@ if ($(".event-swiper").length) {
 
     breakpoints: {
       600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      800: {
         slidesPerView: 3,
         spaceBetween: 20,
       },
+      800: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
       1300: {
-        slidesPerView: 4.9,
+        slidesPerView: 5.9,
         spaceBetween: 20,
       },
     },
   });
 }
-
-// event tab(MAIN)
-
-const $eventTabMenu = $(".event-tab > li");
-const $eventTabCon = $(".event-list");
-
-$eventTabCon.hide();
-$eventTabCon.eq(0).show();
-$eventTabMenu.eq(0).find("a").addClass("on");
-
-$eventTabMenu.on("click", function (e) {
-  e.preventDefault();
-
-  const eventTabIdx = $(this).index();
-
-  $eventTabMenu.find("a").removeClass("on");
-  $(this).find("a").addClass("on");
-
-  $eventTabCon.hide();
-  $eventTabCon.eq(eventTabIdx).show();
-
-  if (eventTabIdx === 0 && window.eventSwiper) {
-    window.eventSwiper.update();
-  }
-});
 
 /* MENU!!!---------------------------------------------- */
 
@@ -350,16 +320,13 @@ function rewardTabAction(index) {
   $rewardTabCon.eq(index).show();
 }
 
-// rewards.html의 캐릭터 고정
+/* MAP!!!---------------------------------------------- */
 
-const $footerSection = $("footer");
+const $mapSearch = $(".map-search");
+const $btnFold = $(".btn-fold");
 
-$footerSection.on("mouseenter", function () {
-  $(".app-store figure").addClass("on");
-});
-
-$footerSection.on("mouseleave", function () {
-  $(".app-store figure").removeClass("on");
+$btnFold.on("click", function () {
+  $mapSearch.toggleClass("on"); // Toggle the 'on' class for .map-search
 });
 
 // TOP 버튼
